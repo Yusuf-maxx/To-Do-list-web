@@ -1,57 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Advanced To-Do App</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do App</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <div class="container">
+        <header class="header">
+            <div class="logo">LOGOUT</div>
+            <nav class="nav">
+                <a href="#" class="active">Home</a>
+                <a href="#">Projects</a>
+                <a href="#">Settings</a>
+            </nav>
+            <button class="logout-btn">Logout</button>
+        </header>
 
-  <!-- 🔗 Navbar -->
-  <header class="navbar">
-    <div class="nav-left">
-      <span class="profile-icon">👤</span>
-      <span class="profile-text">LOOUT</span>
-    </div>
-
-    <nav class="nav-center">
-      <a href="#" class="active">Home</a>
-      <a href="#">Projects</a>
-      <a href="#">Settings</a>
-    </nav>
-
-    <div class="nav-right">
-      <button class="logout-btn">Logout</button>
-    </div>
-  </header>
-
-  <!-- 📝 Task Input Section -->
-  <section class="task-input-section">
-    <h2>Add a task</h2>
-    <div class="task-input-wrapper">
-      <input type="text" id="taskInput" placeholder="Enter your task">
-      <button id="addTaskBtn">+</button>
-    </div>
-  </section>
-
-  <!-- 📋 Task List Section -->
-  <section class="task-list-section">
-    <div class="task-column">
-      <!-- Task Card Example -->
-      <div class="task-card">
-        <div class="task-card-header">
-          <h3>Task List</h3>
-          <button class="close-btn">×</button>
+        <div class="add-task-section">
+            <h1 class="add-task-title">Add a task</h1>
+            <div class="task-input-container">
+                <input type="text" class="task-input" placeholder="Enter your task..." id="taskInput">
+                <button class="add-btn" onclick="addTask()">+</button>
+            </div>
         </div>
-        <ul class="task-items">
-          <li>Sample Task 1</li>
-          <li>Sample Task 2</li>
-        </ul>
-      </div>
-    </div>
-  </section>
 
-  <script src="script.js"></script>
+        <div class="task-columns" id="taskColumns">
+            <div class="task-column" id="column1">
+                <div class="column-header">
+                    <span class="column-title">To Do</span>
+                    <button class="close-column">×</button>
+                </div>
+                <div class="tasks-list" id="todoTasks">
+                    <div class="empty-state">No tasks yet</div>
+                </div>
+            </div>
+
+            <div class="task-column" id="column2">
+                <div class="column-header">
+                    <span class="column-title">In Progress</span>
+                    <button class="close-column">×</button>
+                </div>
+                <div class="tasks-list" id="progressTasks">
+                    <div class="empty-state">No tasks yet</div>
+                </div>
+            </div>
+
+            <div class="task-column" id="column3">
+                <div class="column-header">
+                    <span class="column-title">Completed</span>
+                    <button class="close-column">×</button>
+                </div>
+                <div class="tasks-list" id="completedTasks">
+                    <div class="empty-state">No tasks yet</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
